@@ -30,7 +30,7 @@ routes.post('/shopping-list', function(req, res) {
 	
 	ShoppingList.create(body)
 		.then((driver) => res.status(200).send(driver))
-		.catch((error) => res.status(401).json(error));
+		.catch((error) => res.status(400).json(error));
 });
 
 routes.delete('/shopping-list/:id', function (req, res) {
