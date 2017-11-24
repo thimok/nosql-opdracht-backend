@@ -25,6 +25,14 @@ routes.get('/shopping-list/:id', function (req, res) {
         .catch((error) => res.status(401).json(error));
 });
 
+routes.post('/shopping-list', function(req, res) {
+	const body = req.body;
+	
+	ShoppingList.create(body)
+		.then((driver) => res.status(200).send(driver))
+		.catch((error) => res.status(401).json(error));
+});
+
 routes.delete('/shopping-list/:id', function (req, res) {
     const id = req.params.id;
 
