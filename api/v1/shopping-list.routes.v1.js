@@ -11,7 +11,7 @@ routes.get('/shopping-list', function (req, res) {
 			console.log(shoppingList);
 			res.status(200).json(shoppingList);
 		})
-		.catch((error) => res.status(401).json(error));
+		.catch((error) => res.status(400).json(error));
 });
 
 routes.get('/shopping-list/:id', function (req, res) {
@@ -22,7 +22,7 @@ routes.get('/shopping-list/:id', function (req, res) {
 			console.log(shoppingList);
 			res.status(200).json(shoppingList);
 		})
-		.catch((error) => res.status(401).json(error));
+		.catch((error) => res.status(400).json(error));
 });
 
 routes.put('/shopping-list/:id', function (req, res) {
