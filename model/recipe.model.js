@@ -7,7 +7,8 @@ const RecipeSchema = new Schema({
 		type: String,
 		required: [true, 'Name is required']
 	},
-	ingredients: [IngredientSchema]
+	ingredients: [IngredientSchema],
+    imagePath: String
 }, {
 	timestamps: true
 });
