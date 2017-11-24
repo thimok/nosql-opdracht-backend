@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 const IngredientSchema = require('./ingredient.model');
 
 const ShoppingListSchema = new Schema({
-	name: String,
+	name: {
+		type: String,
+		required: [true, 'Name is required']
+	},
 	amount: Number
 }, {
 	timestamps: true
@@ -11,5 +14,6 @@ const ShoppingListSchema = new Schema({
 
 
 const ShoppingList = mongoose.model('shopping-list', ShoppingListSchema);
+
 
 module.exports = ShoppingList;
