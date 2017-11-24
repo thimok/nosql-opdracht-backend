@@ -12,4 +12,5 @@ const ShoppingListSchema = new Schema({
 
 const ShoppingList = mongoose.model('shopping-list', ShoppingListSchema);
 
+
 module.exports = ShoppingList;

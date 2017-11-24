@@ -74,6 +74,7 @@ app.use('/api/v1', shoppingroutes_v1);
 
 // Errorhandler voor express-jwt errors
 // Wordt uitgevoerd wanneer err != null; anders door naar next().
+
 app.use(function (err, req, res, next) {
     // console.dir(err);
     var error = {
