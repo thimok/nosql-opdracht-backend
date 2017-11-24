@@ -62,7 +62,7 @@ routes.put('/shopping-list/:id', function(req, res) {
 					res.status(200).send(shoppingList);
 				}
 			})
-            .catch((error) => res.status(401).json(error));
+            .catch((error) => res.status(400).json(error));
 
 	});
 
