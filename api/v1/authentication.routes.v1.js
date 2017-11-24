@@ -4,7 +4,7 @@
 var express = require('express');
 var router = express.Router();
 
-var auth = require('../auth/authentication');
+var auth = require('../../auth/authentication');
 
 //
 // Hier gaat de gebruiker inloggen.
