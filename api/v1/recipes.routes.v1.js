@@ -16,7 +16,15 @@ routes.get('/recipes', function(req, res) {
 
 routes.post('/recipes', function(req, res) {
     res.contentType('application/json');
-    const recipeProps = req.body;
+    const body = req.body;
+
+    const recipeProps = {
+        name: body.name,
+        ingredients: body.ingredients,
+        imagePath: body.imagePath,
+        description: body.description
+    };
+
     Recipe.create(recipeProps)
         .then(recipe => res.status(201).send(recipe))
         .catch((error) => res.status(400).send({error: error.message}));
@@ -31,7 +39,9 @@ routes.put('/recipes/:id', function(req, res) {
         recipeId,
         {
             name: recipeProps.name,
-            ingredients: recipeProps.ingredients
+            ingredients: recipeProps.ingredients,
+            imagePath: recipeProps.imagePath,
+            description: recipeProps.description
         }
     )
     .then(() => Recipe.findById({_id: recipeId}))
