@@ -43,8 +43,13 @@ routes.put('/shopping-list/:id', function (req, res) {
 
 routes.post('/shopping-list', function (req, res) {
 	const body = req.body;
-	
-	ShoppingList.create(body)
+
+	const shoppingListProps = {
+		name: body.name,
+		amount: body.amount
+	};
+
+	ShoppingList.create(shoppingListProps)
 		.then((driver) => res.status(200).send(driver))
 		.catch((error) => res.status(400).json(error));
 });
