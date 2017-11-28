@@ -9,21 +9,21 @@ var User = require('../../model/user.model');
 //
 // Geef een lijst van alle users.
 //
-routes.get('/users', function(req, res) {
-    res.contentType('application/json');
-    User.find({})
-        .then((users) => {
-            // console.log(users);
-            res.status(200).json(users);
-        })
-        .catch((error) => res.status(401).json(error));
+routes.get('/users', function (req, res) {
+	res.contentType('application/json');
+	User.find({})
+		.then((users) => {
+			// console.log(users);
+			res.status(200).json(users);
+		})
+		.catch((error) => res.status(401).json(error));
 });
 
 //
 // Retourneer één specifieke users. Hier maken we gebruik van URL parameters.
 // Vorm van de URL: http://hostname:3000/api/v1/users/23
 //
-routes.get('/users/:id', function(req, res) {
+routes.get('/users/:id', function (req, res) {
 
 });
 
@@ -31,7 +31,7 @@ routes.get('/users/:id', function(req, res) {
 // Voeg een user toe. De nieuwe info wordt gestuurd via de body van de request message.
 // Vorm van de URL: POST http://hostname:3000/api/v1/users
 //
-routes.post('/users', function(req, res) {
+routes.post('/users', function (req, res) {
 
 });
 
@@ -42,7 +42,7 @@ routes.post('/users', function(req, res) {
 // 
 // Vorm van de URL: PUT http://hostname:3000/api/v1/users/23
 //
-routes.put('/users/:id', function(req, res) {
+routes.put('/users/:id', function (req, res) {
 
 });
 
@@ -53,7 +53,7 @@ routes.put('/users/:id', function(req, res) {
 // 
 // Vorm van de URL: DELETE http://hostname:3000/api/v1/users/23
 //
-routes.delete('/users/:id', function(req, res) {
+routes.delete('/users/:id', function (req, res) {
 
 });
 
